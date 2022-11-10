@@ -1,2 +1,2 @@
 # WoodKart
-Ecommerce Application
+Ecommerce Application using Angular FrontEnd and Java SpringBoot BackEnd
