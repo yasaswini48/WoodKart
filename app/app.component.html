@@ -1,0 +1,73 @@
+<div class="top">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="../assets/images/logo.svg" alt="">
+        <a class="navbar-brand" href="#">WoodKart</a>
+      <div *ngIf="userType==='default'" class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo01">
+        <ul class="navbar-nav user ">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="home" routerLinkActive=active>HOME</a>
+          </li>
+          <li class="nav-item shop">
+            <a  class="nav-link" routerLink="viewProducts" routerLinkActive=active>SHOP</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="dropbtn user">
+                <i class="fa fa-lg fa-user-o"></i>
+                <span class="profile">PROFILE</span>
+              </button>
+              <div class="dropdown-content">
+                <a routerLink="register" routerLinkActive=active>Register</a>
+                <a routerLink="login" routerLinkActive=active>Login</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="userType==='admin'" class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo01">
+        <ul class="navbar-nav admin d-flex justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="admin/addProduct" routerLinkActive=active>Add Product</a>
+          </li>
+          <li class="nav-item shop">
+            <a  class="nav-link" routerLink="admin/adminViewProducts" routerLinkActive=active>View Products</a>
+          </li>
+          <li class="nav-item shop">
+            <a  class="nav-link" routerLink="admin/viewUsers" routerLinkActive=active>Transactions</a>
+          </li>
+          <li class="nav-item shop">
+            <a class="nav-link logOut"  (click)="onLogOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="userType==='user'" class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo01">
+        <ul class="navbar-nav admin d-flex justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="viewProducts" routerLinkActive=active>Shop</a>
+          </li>
+          <li class="nav-item shop">
+<a  class="notification nav-link" routerLink="cart" routerLinkActive=active>
+  <span style="font-size: 17px;">Cart</span>
+  <span class="badge"> {{userServiceObj.getCartCount()}} </span>
+</a>
+            <!-- <a  class="nav-link" routerLink="cart" routerLinkActive=active>Cart</a> -->
+          </li>
+          <li class="nav-item shop">
+            <a  class="nav-link" routerLink="orders" routerLinkActive=active>Orders</a>
+          </li>
+          <li class="nav-item shop">
+            <a  class="nav-link logOut" style="cursor: pointer;" (click)="onLogOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+
+</div>
+<!-- dummy place holder -->
+<router-outlet></router-outlet>
+<app-footer></app-footer>

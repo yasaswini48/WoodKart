@@ -1,0 +1,126 @@
+
+.addingForm
+{
+    background-color: #fff;
+	border:none;
+    box-shadow: 1px 1px 0.5em black;
+    border-radius: 12px;
+}
+.container .header {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600px;
+	text-align: center;
+	background-color: #2EB5E0;
+	border-radius: 12px 12px 0 0;
+    padding: 5px;
+    padding-bottom: 10px;
+}
+.container form {
+	padding: 25px 30px;
+}
+.container form .field {
+	position: relative;
+	height: 50px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.container form .field input,
+.container form .field textarea,
+.container form .field button {
+	width: 100%;
+	height: 40px;
+	border-radius: 25px;
+	outline: none;
+}
+
+.container form .field textarea,
+.container form .field input {
+	border: 1px solid lightgrey;
+	padding-left: 15px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+	font-size: 16px;
+}
+
+.container form .field textarea:focus,
+.container form .field textarea:valid {
+	border-color:#2EB5E0;
+}
+
+.container form .field input:focus,
+.container form .field input:valid {
+	border-color:#2EB5E0;
+}
+
+.container form .field input:focus ~ label,
+.container form .field input:valid ~ label{
+	top: 0%;
+	font-size: 17px;
+	color: #2EB5E0;
+	background-color: #fff;
+}
+
+.container form .field input
+{
+    height: 40px;
+}
+
+.container form .field textarea
+{
+    height: 100px;
+    
+}
+.container form .field textarea:focus ~ label,
+.container form .field textarea:valid ~label
+{
+    top: 0%;
+	font-size: 17px;
+	color: #2EB5E0;
+	background-color: #fff;
+}
+
+.container form .field label 
+{
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
+	transition: all 0.3s ease;
+	pointer-events: none;
+	font-size: 17px;
+	
+}
+
+.container form .field button {
+	color: #2EB5E0;
+	background-color: white;
+	font-size: 17px;
+	font-weight: 500;
+	padding-left: 0;
+	cursor: pointer;
+	transition: all 0.6s ease;
+    border: 2px #2EB5E0 solid;
+}
+
+.container form .field button:active,
+.container form .field button:hover {
+	transform: scale(0.95);
+	color:white;
+background:#2EB5E0;
+font-size: 14px;
+}
+.in1 
+{
+    margin-bottom: 25px;
+}
+.in2
+{
+    margin-bottom: 85px;
+}
+.err
+{
+	color: red;
+	font-weight: 600;
+}

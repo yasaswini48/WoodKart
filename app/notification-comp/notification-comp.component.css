@@ -1,0 +1,29 @@
+.butn
+{
+    color: #2EB5E0;
+	background-color: black;
+	cursor: pointer;
+	transition: all 0.6s ease;
+    border: 2px #2EB5E0 solid;
+    border-radius: 50px;
+    font-size: 12px;
+    width: 4.2em;
+    height: 2.1em;
+}
+.butn:hover
+{
+    transform: scale(0.85);
+	color:white;
+    background:#2EB5E0;
+}
+.notification
+{
+   padding: 0;
+   margin: 0;
+}
+img
+{
+    height:35px; 
+    width:35px; 
+    object-fit: cover;
+}

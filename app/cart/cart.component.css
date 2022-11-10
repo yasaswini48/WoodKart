@@ -1,0 +1,130 @@
+.outer
+{
+    cursor: pointer;
+}
+.name
+{
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.bill
+{
+    box-shadow: 1px 1px 0.5em black;
+}
+.card
+{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0.2em black;
+}
+.image
+{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.showProd
+{
+    width: 700px;
+}
+.details
+{
+    position: relative;
+    margin-left: -47px;
+    margin-top: 10px;
+}
+.product-desc
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-name,.product-price {
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 350ms ease;
+  }
+  .counting div
+  {
+    font-size: 30px;
+  }
+.butn button
+{
+    background-color: #2EB5E0;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+}
+.box
+{
+    padding: 20px;
+}
+.remove
+{
+    background-color: white;
+    border: none;
+    position: absolute;
+    right: -20px;
+    top: -3px;
+    color: red;
+}
+.empty
+{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+.name
+{
+    letter-spacing: 1.5px;
+}
+.billTitle
+{
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+.oneRow
+{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.order
+{
+    font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #2EB5E0;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    border-radius: 50px;
+    transition: all ease 350ms;
+}
+.shop:hover,
+.order:hover
+{
+	color:#2EB5E0;
+    background:white;
+    border: 2px solid #2EB5E0;
+}
+.shop
+{
+    margin-bottom: 100px;
+    font-weight: 600;
+    background-color: #2EB5E0;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    border-radius: 50px;
+    transition: all ease 350ms;
+}

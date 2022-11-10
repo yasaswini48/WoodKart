@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="header">Enter Card Details</div>
+    <form [formGroup]="pay1Form" autocomplete="off">
+      <div class="field input-field">
+          <input type="text" name="cardNo" formControlName="cardNo">
+        <label for="cardNo">Card Number</label>
+        <div class="err" *ngIf="getCardNo && getCardNo.invalid && getCardNo.touched" >
+          Enter valid card no.
+        </div>
+      </div>
+      <div  class="field input-field">
+          <input type="text" name="cardName"  formControlName="cardName">
+        <label for="cardName">Name on Card</label>
+        <span class="err" *ngIf="getCardName && getCardName.invalid && getCardName.touched">
+          Enter valid card name.!
+        </span>
+      </div>
+      <div  class="field input-field">
+        <div class="row">
+            <div class="col-8">
+                <input type="text" name="expiryDate"  formControlName="expiryDate">
+                <label for="expiryDate">Expiry Date</label>
+                <span class="err" *ngIf="getExpiryDate && getExpiryDate.invalid && getExpiryDate.touched">
+                  Enter expiry date
+                </span>
+            </div>
+            <div class="col-4">
+                <input type="password" name="cvv"  formControlName="cvv" placeholder="CVV">
+                <!-- <label for="cvv">CVV</label> -->
+                <span class="err" *ngIf="getCvv && getCvv.invalid && getCvv.touched">
+                Enter CVV.
+                </span>
+            </div>
+        </div>
+    </div>
+      <div class="field button-field">
+        <button [disabled]="pay1Form.invalid" (click)="onPay()">Proceed to Pay</button>
+      </div>
+    </form>
+</div>

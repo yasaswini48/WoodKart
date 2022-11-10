@@ -1,0 +1,84 @@
+<div class="container">
+    <div *ngIf="userObj.totalCount==0">
+        <div class="box">
+            <img class="empty d-block mx-auto" src="../assets/images/emptyCart.jpg" alt="">
+            <p class="text-center" style="font-size: 18px; font-weight: 600;">
+                Hey,it feels so light!
+            </p>
+            <p class="text-center" style="font-size: 16px;">
+                There's nothing in your cart! Add more items to make me happy!
+            </p>
+            <p  class="text-center" style="font-size: 16px;">
+                <button class="shop" (click)="gotoShop()">Continue Shopping</button>
+            </p>
+        </div>
+    </div>
+    <div *ngIf="userObj.totalCount!=0" style="margin-bottom: 200px;">
+        <div class="outer">
+            <div class="row">
+                <div class="col-8">
+                    <p class="name">{{userObj.username}}'s Shopping Cart</p>
+                    <div class="cartItems" *ngFor="let obj of cartItems;let ind=index;">
+                        <div class="card mt-4 showProd">
+                            <div class="row">
+                                <div class="col-4">
+                                   <img class="image" src={{obj.productObj.productImage}} alt="Not found">
+                                </div>
+                                <div class="col-8 details" >
+                                    <p class="product-name">{{obj.productObj.productName}}</p>
+                                    <p class="product-desc"> {{obj.productObj.productDesc}} </p>
+                                    <p class="product-price">Rs. {{obj.productObj.productPrice*obj.productCount}} </p>
+                                    <div class="counting d-flex">
+                                        <div class="butn">
+                                            <button (click)="onUpdateCount(obj,ind,-1)"> - </button>
+                                        </div>
+                                        <div class="" style="margin-left:30px">
+                                            {{obj.productCount}}
+                                        </div>
+                                        <div  class="butn" style="margin-left:30px">
+                                            <button (click)="onUpdateCount(obj,ind,1)"> + </button>
+                                        </div>
+                                    </div>
+                                    <div >
+                                        <button class="remove" (click)="onRemoveProduct(ind)">
+                                            <i class=" fa fa-remove fa-lg"></i> 
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <p class="name">Your Bill</p>
+                   <div class="card bill p-4">
+                      <p class="billTitle">  PRICE DETAILS ( {{userObj.totalCount}} items ) </p>
+                      <div class="d-flex justify-content-between ">
+                          <div class="oneRow">Total MRP</div>
+                          <div>Rs.{{getTotalBillAmount()}} </div>
+                      </div>
+                      <div class="d-flex justify-content-between ">
+                        <div class="oneRow">Total GST ( 8% )</div>
+                        <div>Rs.{{getGSTAmount()}} </div>
+                    </div>
+                    <div class="d-flex justify-content-between ">
+                        <div class="oneRow">Delivery Charges</div>
+                        <div>Rs.10</div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between ">
+                        <div class="billTitle">TOTAL AMOUNT</div>
+                        <div class="billTitle">Rs.{{getTotalAmount()}}</div>
+                    </div>
+                    <div class="billTitle" style="margin-top: 10px;">
+                        Delivery by : {{getExpectedDelivery()}}
+                    </div>
+                    <div class="d-flex">
+                        <button class="order" (click)="gotoAddress()">Place Order</button>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

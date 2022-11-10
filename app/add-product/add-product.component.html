@@ -1,0 +1,44 @@
+<div class="container d-block mx-auto w-75 m-5">
+    <div class="addingForm">
+        <div class="header">Add Product</div>
+        <form [formGroup]="addProductForm" >
+          <div class="field in1 input-field">
+            <input type="text" name="productName"  formControlName="productName">
+            <label for="productName">Product Name</label>
+            <div class="err" *ngIf="getProductName && getProductName.invalid && getProductName.touched" >
+              Please enter product name
+            </div>
+          </div>
+
+          <div class="field in2 input-field">
+            <textarea name="productDesc" id="productDesc" cols="30" rows="10" formControlName="productDesc"></textarea>
+            <!-- <input type="text" name="productDesc"  formControlName="productDesc"> -->
+            <label for="productDesc">Product description</label>
+            <div class="err" *ngIf="getProductDesc && getProductDesc.invalid && getProductDesc.touched" >
+              Please enter product description
+            </div>
+          </div>
+
+          <div class="field in1 input-field">
+            <input type="text" name="productImage"  formControlName="productImage">
+            <label for="productImage">Product ImageURL</label>
+            <div class="err" *ngIf="getProductImage && getProductImage.invalid && getProductImage.touched" >
+              Please enter product Url
+            </div>
+          </div>
+
+          <div class="field in1 input-field">
+            <input type="number" name="getProductPrice"  formControlName="productPrice" [(ngModel)]="productPrice" >
+            <label for="getProductPrice">Product price</label>
+            <div  class="err" *ngIf="(getProductPrice && getProductPrice.invalid && getProductPrice.touched) || (productPrice<=0)">
+            Please enter valid product price
+            </div>
+          </div>
+         
+          <div class="field in1 button-field">
+            <button  mat-stroked-button [disabled]="addProductForm.invalid" (click)="onAddProduct()">Add Product</button>
+          </div>
+       
+        </form>
+    </div>
+</div>

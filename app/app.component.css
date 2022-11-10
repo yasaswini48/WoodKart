@@ -1,0 +1,157 @@
+.top
+  {
+   box-shadow: 0px 0px 0.13rem black;
+  }
+   .nav-link
+  {
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 9px;
+      letter-spacing: 0.5px;
+      position: relative;
+      color: black;
+  }
+   .nav-link::after
+  {
+      content: '';
+      position:absolute;
+      display: block;
+      height: 5px;
+      width:0%;
+      background-color:#2EB5E0;
+      border: none;
+      border-radius: 50px;
+      transition: all ease-in-out 350ms;
+  }
+  .user .nav-link:hover::after
+  {
+      width:78%;
+  }
+  .user .nav-link:hover
+  {
+    color: #2EB5E0;
+  }
+  .user .active::after
+  {
+    width:78%;
+  }
+  .dropdown
+  {
+      position: relative;
+      display: inline-block;
+  }
+  .dropbtn
+  {
+      border: none;
+      background:transparent;
+  }
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      width: 130px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+      border: none;
+      border-radius: 0px 0px 10px 10px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 5px 5px;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+    }
+    .dropdown:hover .fa-user-o 
+    {
+      color: #2EB5E0;
+    }
+    .dropdown:hover .profile
+    {
+      color: #2EB5E0;
+    }
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown-content a:hover { color: #2EB5E0; font-weight: 600;}
+    .profile
+    {
+      display: block;
+      font-size: 0.94em;
+      margin-top: 0.1em;
+      font-weight: 600;
+    }
+    .user
+    {
+        margin-top:9px;
+    }
+    .shop
+    {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+    .navbar-brand
+    {
+        font-size: 22px;
+        color: black;
+        margin-left: 0.6em;
+        font-weight: 600;
+        transition: all ease 350ms;
+    }
+    .navbar-brand:hover
+    {
+        color: #2EB5E0;
+        transform: scaleX(1.1);
+    }
+    .admin .nav-link
+    {
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+    }
+    .admin .nav-link
+    {
+      transition: all ease 0.4s;
+      padding: 0.5em;
+
+    }
+    .admin .nav-link:hover
+    {
+      background-color: #2EB5E0;
+      color: white;
+      border-radius: 50px;
+      transform: scale(1);
+    }
+    .admin .active
+    {
+      background-color: #2EB5E0;
+      color: white;
+      border-radius: 50px;
+    }
+    .logOut
+    {
+      cursor: pointer;
+    }
+
+    .notification {
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .notification:hover {
+      background-color: #2EB5E0;
+      color: white;
+      transform: scale(1);
+    }
+    
+    .notification .badge {
+      position: absolute;
+      top: -7px;
+      right: -10px;
+      border-radius: 50%;
+      background: red;
+      color: white;
+    }
+ 

@@ -1,0 +1,38 @@
+<div class="addressComp">
+    <div class="container">
+        <div class="header">Add your Address</div>
+        <form [formGroup]="addressForm" autocomplete="off">
+            <div class="field input-field">
+                <input type="text" name="username" [(ngModel)]="username" formControlName="username">
+                 <label for="username">Enter Username</label>
+              <div class="err" *ngIf="getUsername && getUsername.invalid && getUsername.touched" >
+               Enter valid username
+              </div>
+            </div>
+            <div class="field input-field">
+                <input type="text" name="mobileNo" formControlName="mobileNo">
+              <label for="mobileNo">Enter Mobile No.</label>
+              <span class="err" *ngIf="getMobileNo && getMobileNo.invalid && getMobileNo.touched">
+                Enter valid mobile number
+              </span>
+            </div>
+            <div class="field input-field">
+                <input type="text" name="pinCode" formControlName="pinCode">
+              <label for="pinCode">Enter pincode</label>
+              <span class="err" *ngIf="getPincode && getPincode.invalid && getPincode.touched">
+                Enter valid pincode
+              </span>
+            </div>
+            <div class="field input-field">
+                <input type="text" name="addressLine" formControlName="addressLine">
+              <label for="addressLine">Enter Address</label>
+              <span class="err" *ngIf="getAddressLine && getAddressLine.invalid && getAddressLine.touched">
+                Enter valid address
+              </span>
+            </div>
+            <div class="field button-field">
+              <button  mat-stroked-button [disabled]="addressForm.invalid" (click)="onAddAddress()">Add Address</button>
+            </div>
+          </form>
+    </div>
+</div>

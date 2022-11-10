@@ -1,0 +1,45 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="card w-75 d-block mx-auto mb-5">
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+                    <div class="header">Login</div>
+                    <form [formGroup]="loginForm" autocomplete="off">
+                      <div class="field input-field"  *ngIf="regLoginStatus">
+                        <input type="text" name="username" value={{username}} [(ngModel)]="username" formControlName="username">
+                        <label for="username">Enter Username</label>
+                      </div>
+                      <div class="field input-field" *ngIf="!regLoginStatus">
+                          <input type="text" name="username" [(ngModel)]="username" formControlName="username">
+                        <label for="username">Enter Username</label>
+                        <div class="err" *ngIf="getUsername && getUsername.invalid && getUsername.touched" >
+                          Username must have atleast 5 charachters.
+                        </div>
+                      </div>
+                      <div *ngIf="regLoginStatus" class="field input-field"> 
+                        <input type="password" name="password" value={{password} [(ngModel)]="password" formControlName="password">
+                        <label for="password">Enter password</label>
+                      </div>
+                      <div *ngIf="!regLoginStatus" class="field input-field">
+                          <input type="password" name="password" [(ngModel)]="password" formControlName="password">
+                        <label for="password">Enter password</label>
+                        <span class="err" *ngIf="getPassword && getPassword.invalid && getPassword.touched">
+                          Password must have atleast 5 charachters.
+                        </span>
+                      </div>
+                      <div class="field button-field">
+                        <button  mat-stroked-button [disabled]="loginForm.invalid" (click)="onLogin()">Login</button>
+                      </div>
+                      <div class="form-link sign-up">
+                        <span> Don't have an account? </span> 
+                        <a class="signUp ms-2" style="cursor: pointer; text-decoration:none;" (click)="onGotoRegister()">Register here</a>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-4" style="margin-left: -120px">
+                <img src="https://i.pinimg.com/564x/73/82/70/73827035ef98a975faeacdd428bf1bdc.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

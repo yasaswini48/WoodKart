@@ -1,0 +1,24 @@
+<p class="title">#Order {{orderObj.id}} </p>
+<div class="container">
+    <div class="card">
+        <div class="row"  *ngFor="let obj of myCartListProds;let ind =index;">
+            <div class="col-4">
+                <img  src={{obj.productObj.productImage}} alt="not found">
+            </div>
+            <div class="col-6">
+                <p style="text-align: left; font-size: 16px; font-weight:600 ;"> {{obj.productObj.productName}} 
+                 </p>
+                 <div> <p class=".product-desc"> {{obj.productObj.productDesc}} </p> </div>
+                <div class="d-flex justify-content-between" style="font-weight:600 ;">
+                    <div><p> Rs. {{obj.productObj.productPrice}} </p></div>
+                    <div> <p> Qty: {{obj.quantity}}  </p> </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around "  style="font-weight:600 ;">
+        <div> <p>Total Amount</p></div>
+        <div> Rs. {{orderObj.totalAmount}} </div>
+     </div>
+</div>

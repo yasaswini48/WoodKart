@@ -1,0 +1,62 @@
+.shop:hover
+{
+	color:#2EB5E0;
+    background:white;
+    border: 2px solid #2EB5E0;
+}
+.shop
+{
+    margin-bottom: 100px;
+    font-weight: 600;
+    background-color: #2EB5E0;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    border-radius: 50px;
+    transition: all ease 350ms;
+}
+.card img
+{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all ease 350ms;
+}
+.card img:hover
+{
+    transform: scale(1.1);
+}
+.card
+{
+    border: none;
+}
+.title
+{
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem;
+    font-size: 20px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.title:hover
+{
+    color: #2EB5E0;
+    transform: scale(1.02);
+}
+.product-desc
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.col-6
+{
+    margin-left: -50px;
+}
+.card
+{
+    text-align: center;
+}

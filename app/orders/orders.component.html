@@ -1,0 +1,56 @@
+<div class="container">
+    <div *ngIf="myOrders.length==0">
+        <div class="box">
+            <img class="empty d-block mx-auto" src="../assets/images/noOrderFound.jpg" alt="">
+            <p class="text-center" style="font-size: 18px; font-weight: 600;">
+                Hey,seems like you have not placed any orders yet
+            </p>
+            <p  class="text-center" style="font-size: 16px;">
+                <button class="shop mt-3" (click)="gotoShop()">Continue Shopping</button>
+            </p>
+        </div>
+    </div>
+    <div *ngIf="myOrders.length!=0">
+             <p class="title">
+            <img src="../assets/images/prev.png" style="width: 30px; height:30px; object-fit: cover;" alt="">
+            Orders History
+            </p>
+        <div class="container internal">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col" *ngFor="let myOrderObj of myOrders;let ind=index;">
+                  <div class="card mt-5 outer">
+                      <p class="order">Order Id: {{myOrders[ind].id}}</p>
+                      <p class="order" style="color: gray;">Placed on: {{myOrders[ind].placedOn}}</p>
+                          <div  *ngFor="let obj of myCartListProds[ind]">
+                             <div class="cbody">
+                                <!-- <img class=""  src={{obj.product.productImage}} alt="not found">
+                                <span class="text">
+                                X {{obj.quantity}} 
+                                </span> -->
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img  src={{obj.product.productImage}} alt="not found">
+                                        </div>
+                                        <div class="col-6">
+                                            <p style="text-align: left; font-size: 16px; font-weight:600 ;"> {{obj.product.productName}} </p>
+                                            <div class="d-flex justify-content-between" style="font-weight:600 ;">
+                                                <div><p> Rs.{{obj.product.productPrice}} </p></div>
+                                                <div> <p> Qty: {{obj.quantity}}  </p> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                             </div>
+                          </div>
+                         <div class="d-flex justify-content-between"  style="font-weight:600 ;">
+                            <div> <p>Total Amount</p></div>
+                            <div> Rs. {{myOrderObj.totalAmount}} </div>
+                         </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

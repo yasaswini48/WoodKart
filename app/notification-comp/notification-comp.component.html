@@ -1,0 +1,13 @@
+
+<div  class="d-flex notification justify-content-between">
+    <div class="msg">
+        <img *ngIf="data.imgUrl" src={{data.imgUrl}}  alt="">
+        {{data.message}}
+    </div>
+    <div >
+        <button class="butn" (click)="snackBarRef.dismiss()">
+            {{data.buttonText}}
+        </button>
+    </div>    
+</div>
+

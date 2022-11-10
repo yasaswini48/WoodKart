@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+*
+{
+font-family: 'Playfair Display', serif;
+font-size: 14px;
+}
+.myPanel.mat-snack-bar-container
+{
+    background-color: black;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 1.2em black;
+}
